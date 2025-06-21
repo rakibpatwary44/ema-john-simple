@@ -1,6 +1,7 @@
 import React from "react";
 import "./Buy.css";
 import { Link } from "react-router";
+import Products from "../Products/Products";
 
 const Buy = (props) => {
   const Cart = props.Cart;
@@ -9,7 +10,7 @@ const Buy = (props) => {
   let total = 0;
   for (let i = 0; i < Cart.length; i++) {
     const prd = Cart[i];
-    total = total + prd.price;
+    total = total + prd.price * prd.quantity;
   }
   let shipping = 0;
   if (total > 35) {
